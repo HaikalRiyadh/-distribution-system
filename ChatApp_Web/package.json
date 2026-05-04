@@ -1,0 +1,21 @@
+{
+  "name": "chat-app-web",
+  "version": "1.0.0",
+  "description": "Distributed Chat Application with Web Interface and Room Support",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": ["chat", "socket.io", "realtime"],
+  "author": "Haikal Riyadh",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "socket.io": "^4.5.4",
+    "path": "^0.12.7"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat App - Multi Room & Device</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- ==================== SIDEBAR ==================== -->
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <h1>💬 Chat App</h1>
+                <p>Distributed Systems</p>
+            </div>
+
+            <!-- Room Selector -->
+            <div class="room-section">
+                <h3>Rooms</h3>
+                <input type="text" id="roomInput" placeholder="Masukkan nama room..." class="room-input">
+                <button id="joinRoomBtn" class="btn btn-primary">Join Room</button>
+                <ul id="roomsList" class="rooms-list"></ul>
+            </div>
+
+            <!-- User List in Sidebar -->
+            <div class="user-list-sidebar" id="userListSidebar" style="display: none;">
+                <h4>Users in Room</h4>
+                <ul id="usersList" class="users">
+                    <li class="no-users">No users yet</li>
+                </ul>
+            </div>
+
+            <!-- Current Room Info -->
+            <div class="room-info" id="roomInfo" style="display: none;">
+                <h4>Room Aktif:</h4>
+                <p id="currentRoom" class="room-name"></p>
+                <button id="leaveRoomBtn" class="btn btn-danger">Leave Room</button>
+            </div>
+
+            <!-- Status -->
+            <div class="status">
+                <div id="connectionStatus" class="status-indicator status-connected"></div>
+                <span>Connected</span>
+            </div>
+        </div>
+
+        <!-- ==================== MAIN CHAT ==================== -->
+        <div class="chat-container" id="chatContainer" style="display: none;">
+            <!-- Chat Header -->
+            <div class="chat-header">
+                <h2 id="roomTitle">Chat Room</h2>
+                <div class="user-count">
+                    <span id="userCountBadge">0</span> Users
+                </div>
+            </div>
+
+            <!-- Messages Area -->
+            <div class="messages" id="messagesContainer">
+                <div class="welcome-message">
+                    <h3>Welcome to Chat Room! 🎉</h3>
+                    <p>Start chatting with other users in this room</p>
+                </div>
+            </div>
+
+            <!-- Typing Indicator -->
+            <div id="typingIndicator" class="typing-indicator" style="display: none;">
+                <span id="typingUser"></span> is typing...
+            </div>
+
+            <!-- Input Area -->
+            <div class="input-area">
+                <input 
+                    type="text" 
+                    id="messageInput" 
+                    placeholder="Type your message..." 
+                    class="message-input"
+                    disabled
+                >
+                <button id="sendBtn" class="btn btn-send" disabled>Send</button>
+            </div>
+        </div>
+
+        <!-- ==================== LOGIN SECTION ==================== -->
+        <div class="login-container" id="loginContainer">
+            <div class="login-box">
+                <h2>Welcome to Chat App</h2>
+                <p>Distributed Chat System - Device to Device</p>
+                
+                <div class="form-group">
+                    <label for="userNameInput">Your Name:</label>
+                    <input 
+                        type="text" 
+                        id="userNameInput" 
+                        placeholder="Enter your name"
+                        class="form-input"
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="roomNameInput">Room Name:</label>
+                    <input 
+                        type="text" 
+                        id="roomNameInput" 
+                        placeholder="Enter or create a room"
+                        class="form-input"
+                    >
+                </div>
+
+                <button id="loginBtn" class="btn btn-login">Join Chat</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="client.js"></script>
+</body>
+</html>
