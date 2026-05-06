@@ -208,8 +208,6 @@ MIT License - Distributed Systems UTS Project 2025/2026
 
 **Haikal Riyadh** - Jakarta Global University
 
-**Made with ❤️ for Distributed Systems Course**
-
 ---
 
 ## 📚 Dokumentasi Lengkap
