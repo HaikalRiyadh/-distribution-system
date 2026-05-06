@@ -1,0 +1,24 @@
+# Java compiled files
+*.class
+*.jar
+
+# Node.js
+node_modules/
+package-lock.json
+npm-debug.log
+yarn-error.log
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Environment
+.env
+.env.local
